@@ -1,0 +1,20 @@
+name: 'EKS Kubectl Installer'
+description: 'Install a kubectl CLI connected to your EKS cluster.'
+inputs: 
+  cluster:
+    description: 'Name of your EKS cluster'
+    required: true
+  region:
+    description: 'Region of your EKS cluster'
+    required: true
+    default: 'us-west-2'
+  namespace:
+    description: 'Name of the K8S namespace'
+    required: false
+    default: 'default'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
